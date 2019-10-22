@@ -19,14 +19,14 @@ class App extends React.Component {
       .then(response => response.data)
       // Use this data to update the state
       .then(data => {
-        console.log(data[0]);
-
         this.setState({
           employee: data[0]
         });
       });
   }
-
+  componentDidMount() {
+    this.getEmployee();
+  }
   render() {
     return (
       <div className="App">
